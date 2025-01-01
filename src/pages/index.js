@@ -1,11 +1,11 @@
-import { userSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { Layout } from '../components';
 
-import styles from '../styles/Home.module.css';
+import styles from '../styles/Home.module.scss';
 
 const Component = () => {
-	const isActive  = userSelector(state => state.active);
+	const isActive  = useSelector(state => state.active);
 	const currentPreview = useSelector ((state) => state.currentPreview);
 
 	const githubLink = <a href='https://github.com/melchord>'>Github</a>;
@@ -19,3 +19,7 @@ const Component = () => {
 		</Layout>
 	);
 };
+
+Component.displayName = 'Home';
+
+export default Component;
