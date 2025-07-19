@@ -8,7 +8,10 @@ const Component = () => {
     <Layout title='Melchor Dominguez'>
       <div className={styles.title}>Melchor Dominguez</div>
       <h2>
-        I'm a <Age /> year-old Software Engineer.
+        <Age /> year-old Software Engineer with a strong foundation in Applied Mathematics and
+        Computer Science. Proven experience in scaling applications and proficient across diverse
+        programming languages, including Python, Javascript, Java, and C/C++. Interested in building
+        scalable systems and exploring new technologies.
       </h2>
       <br />
       <h2> Check out my {githubLink}</h2>
