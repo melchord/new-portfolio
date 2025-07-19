@@ -3,7 +3,7 @@ import { Age, Layout } from '../components';
 import styles from '../styles/Home.module.scss';
 
 const Component = () => {
-  const githubLink = <a href='https://github.com/melchord>'>Github</a>;
+  const githubLink = <a href='https://github.com/melchord'>Github</a>;
   return (
     <Layout title='Melchor Dominguez'>
       <div className={styles.title}>Melchor Dominguez</div>
