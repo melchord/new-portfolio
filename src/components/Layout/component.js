@@ -6,16 +6,12 @@ import styles from './index.module.scss';
 const Component = ({ children, title }) => (
   <div className={styles.layout}>
     <Head>
-      <link
-        rel='stylesheet'
-        href='https://fonts.googleapis.com/css2?family=Aguafina+Script&family=Montserrat&display=swap'
-      />
       <link rel='shortcut icon' href='/favicon.ico' />
       <title>{title}</title>
     </Head>
-    <div id='stars'></div>
-    <div id='stars2'></div>
-    <div id='stars3'></div>
+    <div id='stars' />
+    <div id='stars2' />
+    <div id='stars3' />
     {children}
   </div>
 );
