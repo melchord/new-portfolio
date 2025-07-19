@@ -5,16 +5,16 @@ import { useStore } from '../store';
 import '../styles/globals.scss';
 
 export default function App({ Component, pageProps }) {
-	const store = useStore(pageProps.initialReduxState);
+  const store = useStore(pageProps.initialReduxState);
 
-	return (
-		<Provider store={store}>
-			<Component {...pageProps} />
-		</Provider>
-	);
+  return (
+    <Provider store={store}>
+      <Component {...pageProps} />
+    </Provider>
+  );
 }
 
 App.propTypes = {
-	Component: PropTypes.func.isRequired,
-	pageProps: PropTypes.object.isRequired,
+  Component: PropTypes.func.isRequired,
+  pageProps: PropTypes.object.isRequired,
 };

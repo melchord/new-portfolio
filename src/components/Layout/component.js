@@ -13,6 +13,9 @@ const Component = ({ children, title }) => (
       <link rel='shortcut icon' href='/favicon.ico' />
       <title>{title}</title>
     </Head>
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
     {children}
   </div>
 );

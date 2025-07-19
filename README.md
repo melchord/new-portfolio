@@ -8,7 +8,7 @@ TBD, probably will use github actions.
 
 ### Step 1: Clone the project
 ```sh
-git clone https:github.com/melchords/new-portfolio.git
+git clone https:github.com/melchord/new-portfolio.git
 cd new-portfolio
 ```
 
