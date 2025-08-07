@@ -1,4 +1,4 @@
-import { Age, Layout } from '../components';
+import { Age, Layout, Time } from '../components';
 
 import styles from '../styles/Home.module.scss';
 
@@ -14,6 +14,10 @@ const Component = () => {
         scalable systems and exploring new technologies.
       </h2>
       <br />
+      <h2>
+        {' '}
+        My current time is: <Time />{' '}
+      </h2>
       <h2> Check out my {githubLink}</h2>
       <img src='/owl.gif' />
       <br />;
