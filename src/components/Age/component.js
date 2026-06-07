@@ -1,12 +1,16 @@
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { getAge, useInterval } from '../utils';
 
 const Component = () => {
+  const [mounted, setMounted] = useState(false);
   const dispatch = useDispatch();
   const currentDate = useSelector((state) => state.lastUpdate);
 
-  let age = getAge(currentDate);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useInterval(() => {
     dispatch({
@@ -16,7 +20,9 @@ const Component = () => {
     });
   }, 1000);
 
-  return age;
+  if (!mounted) return null;
+
+  return getAge(currentDate);
 };
 
 Component.displayName = 'Age';

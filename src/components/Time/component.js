@@ -1,8 +1,10 @@
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { useInterval } from '../utils';
 
 const Component = () => {
+  const [mounted, setMounted] = useState(false);
   const dispatch = useDispatch();
   const currentTime = useSelector((state) => state.time);
   const locale = 'en-US';
@@ -13,6 +15,10 @@ const Component = () => {
     second: 'numeric',
   };
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   useInterval(() => {
     dispatch({
       type: 'tick',
@@ -20,6 +26,8 @@ const Component = () => {
       light: false,
     });
   }, 1000);
+
+  if (!mounted) return null;
 
   return currentTime;
 };

@@ -1,0 +1,51 @@
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.content {
+  flex: 1 1 auto;
+}
+
+.title {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.1rem;
+}
+
+.desc {
+  margin: 0 0 0.5rem 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.tags {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tag {
+  font-size: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+.actions {
+  margin-left: 1rem;
+}
+
+.link {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  background: #1f6feb;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+}

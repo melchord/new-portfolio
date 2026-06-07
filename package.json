@@ -23,6 +23,7 @@
     "@eslint/eslintrc": "^3",
     "eslint": "^9.00.0",
     "eslint-config-google": "^0.14.0",
+    "eslint-plugin-react": "^7.32.2",
     "sass": "^1.83.0"
   }
 }
