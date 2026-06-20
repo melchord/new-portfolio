@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { useInterval } from '../utils';
 
-const Component = () => {
+const Component = ({ value }) => {
   const [mounted, setMounted] = useState(false);
   const dispatch = useDispatch();
   const currentTime = useSelector((state) => state.time);
@@ -29,7 +29,7 @@ const Component = () => {
 
   if (!mounted) return null;
 
-  return currentTime;
+  return value || currentTime;
 };
 
 Component.displayName = 'Time';

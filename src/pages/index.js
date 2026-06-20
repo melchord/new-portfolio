@@ -6,6 +6,7 @@ import styles from '../styles/Home.module.scss';
 const Component = () => {
   const githubLink = <a href='https://github.com/melchord'>Github</a>;
   const [mounted, setMounted] = useState(false);
+  const [now, setNow] = useState(null);
   const [countdown, setCountdown] = useState({
     days: 0,
     hours: 0,
@@ -13,9 +14,21 @@ const Component = () => {
     seconds: 0,
   });
 
+  const locale = 'en-US';
+  const options = {
+    timezone: 'America/New_York',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: 'numeric',
+  };
+
   useEffect(() => {
     setMounted(true);
-    const update = () => setCountdown(getCountdown());
+    const update = () => {
+      const current = new Date();
+      setNow(current);
+      setCountdown(getCountdown(current));
+    };
 
     update();
     const intervalId = setInterval(update, 1000);
@@ -35,7 +48,7 @@ const Component = () => {
       <br />
       <h2>
         {' '}
-        My current time is: <Time />{' '}
+        My current time is: <Time value={now ? now.toLocaleTimeString(locale, options) : ''} />{' '}
       </h2>
       <h2>
         {mounted
@@ -60,8 +73,7 @@ function getNextBirthdayDate(now = new Date()) {
   return nextBirthdayDate;
 }
 
-function getCountdown() {
-  const now = new Date();
+function getCountdown(now = new Date()) {
   const nextBirthdayDate = getNextBirthdayDate(now);
   const diff = nextBirthdayDate - now;
 
