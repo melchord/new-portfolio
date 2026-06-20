@@ -11,7 +11,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react'],
+  plugins: ['react', 'nextPlugin'],
   rules: {
     'quotes': 'off',
     'max-len': [2, { code: 180, tabWidth: 2, ignoreUrls: true }],
