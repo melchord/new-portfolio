@@ -13,7 +13,7 @@ const useInterval = (callback, delay) => {
       const id = setInterval(handler, delay);
       return () => clearInterval(id);
     }
-  }, delay);
+  }, [delay]);
 };
 
 export default useInterval;

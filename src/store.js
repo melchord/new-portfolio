@@ -22,6 +22,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         lastUpdate: action.lastUpdate,
+        time: action.time ?? state.time,
         light: !!action.light,
       };
     case 'update':
