@@ -5,12 +5,20 @@ import styles from '../styles/Home.module.scss';
 
 const Component = () => {
   const githubLink = <a href='https://github.com/melchord'>Github</a>;
-  const [countdown, setCountdown] = useState(getCountdown());
+  const [mounted, setMounted] = useState(false);
+  const [countdown, setCountdown] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCountdown(getCountdown());
-    }, 1000);
+    setMounted(true);
+    const update = () => setCountdown(getCountdown());
+
+    update();
+    const intervalId = setInterval(update, 1000);
 
     return () => clearInterval(intervalId);
   }, []);
@@ -30,8 +38,9 @@ const Component = () => {
         My current time is: <Time />{' '}
       </h2>
       <h2>
-        Next Birthday is in: {countdown.days} days, {countdown.hours} hours, {countdown.minutes}{' '}
-        minutes, {countdown.seconds} seconds!
+        {mounted
+          ? `Next Birthday is in: ${countdown.days} days, ${countdown.hours} hours, ${countdown.minutes} minutes, ${countdown.seconds} seconds!`
+          : 'Next Birthday countdown is loading...'}
       </h2>
       <h2> Check out my {githubLink}</h2>
       <img src='/owl.gif' />
