@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 
 import styles from './index.module.scss';
+import Sidebar from '../Sidebar';
 
 const Component = ({ children, title }) => (
   <div className={styles.layout}>
@@ -12,6 +13,7 @@ const Component = ({ children, title }) => (
     <div id='stars' />
     <div id='stars2' />
     <div id='stars3' />
+    <Sidebar />
     {children}
   </div>
 );
